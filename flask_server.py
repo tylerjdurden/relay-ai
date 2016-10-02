@@ -1,8 +1,13 @@
 from flask import Flask, request, redirect
+from twilio.rest import TwilioRestClient
+from twilio_auth import ACCOUNT_SID, AUTH_TOKEN
 import twilio.twiml
 import os
 
+# set up Flask
 app = Flask(__name__)
+# set up Twilio client
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 # Try adding your own number to this list!
 callers = {
@@ -10,6 +15,7 @@ callers = {
     "+14158675310": "Boots",
     "+14158675311": "Virgil",
     "+12819196619": "Tyler",
+    "+12814509485": "Denise",
 }
 
 @app.route("/", methods=['GET', 'POST'])
