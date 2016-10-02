@@ -25,6 +25,10 @@ def hello_monkey():
     resp = twilio.twiml.Response()
     resp.message(message)
 
+    message = client.sms.messages.create(to="+12814509485",
+            from_="+18327722167",
+            body="Hello there!")
+
     print str(resp)
     return str(resp)
 
