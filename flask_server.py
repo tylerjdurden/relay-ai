@@ -25,6 +25,7 @@ def hello_monkey():
     resp = twilio.twiml.Response()
     resp.message(message)
 
+    print str(resp)
     return str(resp)
 
 if __name__ == "__main__":
