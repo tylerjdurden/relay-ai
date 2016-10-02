@@ -12,9 +12,6 @@ client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 # Try adding your own number to this list!
 callers = {
-    "+14158675309": "Curious George",
-    "+14158675310": "Boots",
-    "+14158675311": "Virgil",
     "+12819196619": "Tyler",
     "+12814509485": "Denise",
 }
@@ -23,6 +20,7 @@ callers = {
 def hello_monkey():
     """Respond and greet the caller by name."""
 
+    print "request.values is ", request.values
     from_number = request.values.get('From', None)
     if from_number in callers:
         message = callers[from_number] + ", thanks for the message!"
@@ -31,10 +29,6 @@ def hello_monkey():
 
     resp = twilio.twiml.Response()
     resp.message(message)
-
-    # message = client.sms.messages.create(to="+12814509485",
-    #         from_="+18327722167",
-    #         body="Hello there!")
 
     print str(resp)
     return str(resp)
