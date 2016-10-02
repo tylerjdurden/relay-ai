@@ -1,6 +1,14 @@
 import sys
 from wit import Wit
 import wikipedia
+from twilio.rest import TwilioRestClient
+from twilio_auth import ACCOUNT_SID, AUTH_TOKEN
+
+# set up Twilio client
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+message = client.sms.messages.create(to="+12819196619",
+                                     from_="+18327722167",
+                                     body="Hello there!")
 
 if len(sys.argv) != 2:
     print('usage: python ' + sys.argv[0] + ' <wit-token>')
