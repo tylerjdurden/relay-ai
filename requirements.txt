@@ -1,5 +1,4 @@
 appdirs==1.4.0
-Archey3==0.4
 Beaker==1.8.0
 beautifulsoup4==4.5.1
 decorator==4.0.10
