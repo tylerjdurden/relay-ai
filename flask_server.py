@@ -5,9 +5,6 @@ import os
 
 # set up Flask
 app = Flask(__name__)
-# set up Twilio client
-ACCOUNT_SID = "ACbbdfbb7ce1a4a179eb0ce3a5987f47c5"
-AUTH_TOKEN = "7905742cf5c12867c9097390302db43a"
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 # Try adding your own number to this list!
